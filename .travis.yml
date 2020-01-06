@@ -3,19 +3,19 @@ services:
     - docker
 
 before_install:
-    - docker build -t anujksdev/react-test -f ./client/Dockerfile.dev    
+    - docker build -t Anujksdev/react-test -f ./client/Dockerfile.dev    
 script:
-    - docker run -e CI=true anujksdev/react-test npm test    
+    - docker run -e CI=true Anujksdev/react-test npm test    
 after_success:
-    - docker build -t anujksdev/multi-client ./client
-    - docker build -t anujksdev/multi-nginx ./nginx
-    - docker build -t anujksdev/multi-server ./server
-    - docker build -t anujksdev/multi-worker ./worker
+    - docker build -t Anujksdev/multi-client ./client
+    - docker build -t Anujksdev/multi-nginx ./nginx
+    - docker build -t Anujksdev/multi-server ./server
+    - docker build -t Anujksdev/multi-worker ./worker
 #login in to the docker cli 
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 #Take those images and push them to docker hub
-- docker push anujksdev/multi-client
-- docker push anujksdev/multi-nginx
-- docker push anujksdev/multi-server
-- docker push anujksdev/multi-worker
+- docker push Anujksdev/multi-client
+- docker push Anujksdev/multi-nginx
+- docker push Anujksdev/multi-server
+- docker push Anujksdev/multi-worker
