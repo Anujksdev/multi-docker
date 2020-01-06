@@ -11,6 +11,7 @@ after_success:
     - docker build -t aks2mail/multi-nginx ./nginx
     - docker build -t aks2mail/multi-server ./server
     - docker build -t aks2mail/multi-worker ./worker
+    
 #login in to the docker cli 
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
